@@ -1,0 +1,26 @@
+{{ form_start(form, {
+	'attr': {
+		'class'  : 'form-inline my-2 my-lg-0 form-test',
+		'action' : path('search'),
+        'method' : 'GET'
+	}
+}) }}
+
+    <div class="input-group mb-2 mr-sm-2">
+        {{ form_widget(form.categories) }}
+
+    	{{ form_widget(form.search, {
+    		'attr': {
+    			'class'      : 'form-control mr-sm-2 resize-input',
+    			'style'      : 'border-radius: 0px 5px 5px 0px;',
+    			'placeholder': 'Rechercher',
+    			'aria-label' : 'Search'
+    		}
+    	}) }}
+
+    	<button class="btn btn-outline-primary my-2 my-sm-0" type="submit">
+    		<i class="fas fa-search"></i>
+    	</button>
+    </div>
+
+{{ form_end(form) }}

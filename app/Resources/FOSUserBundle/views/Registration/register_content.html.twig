@@ -1,0 +1,91 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/register.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="logo-link">
+            <a class="link-logo" href="{{ path('catalog') }}">
+                <img class="logo" src="{{ asset('assets/img/logo.png') }}" />
+            </a>
+        </div>
+
+        <div class="row spacer">
+            <div class="col-lg-12">
+                <div id="form-box">
+                    <div id="title-box">Créer un compte</div>
+
+                    <form action="{{ path('fos_user_registration_register') }}" method="POST">
+                        <div class="form-group" id="fos_user_registration_form">
+                            <label id="label-box">Votre nom</label>
+                            {{ form_widget(form.username, {
+                                'attr': {
+                                    'class' : 'form-control',
+                                    'style' : 'margin-bottom: 0.5rem; font-size: 15px;'
+                            } }) }}
+                            {{ form_errors(form.username) }}
+
+                            <label id="label-box">E-mail</label>
+                            {{ form_widget(form.email, {
+                                'attr': {
+                                    'class' : 'form-control',
+                                    'style' : 'margin-bottom: 0.5rem; font-size: 15px;'
+                            } }) }}
+                            {{ form_errors(form.email) }}
+
+                            <label id="label-box">Mot de passe</label>
+                            {{ form_widget(form.plainPassword.first, {
+                                'attr': {
+                                    'class'      : 'form-control',
+                                    'placeholder': 'Au moins 6 caractères'|trans,
+                                    'style'      : 'margin-bottom: 0.5rem; font-size: 15px;'
+                                }
+                            }) }}
+                            {{ form_errors(form.plainPassword.first) }}
+
+                            <div id="alert-box">
+                                <i class="fas fa-exclamation"></i>
+                                Les mots de passe doivent au moins avoir 6 caractères.
+                            </div>
+
+                            <label id="label-box">Entrez le mot de passe à nouveau</label>
+                            {{ form_widget(form.plainPassword.second, {
+                                'attr': {
+                                    'class' : 'form-control',
+                                    'style' : 'margin-bottom: 0.5rem; font-size: 15px;'
+                            } }) }}
+                            {{ form_errors(form.plainPassword.second) }}
+
+                            {{ form_rest(form) }}
+                            
+                            <button style="font-size: 15px;" class="btn btn-primary col-lg-12" type="submit" value="{{ 'registration.submit'|trans }}">Créer votre compte High-Tech.fr</button>
+
+                            <div id="legal-box">
+                                <span class="filer-phrase">En créant un compte, vous acceptez les </span>
+                                <a class="link-red" href="#">Conditions générales de vente</a>
+                                <span class="filer-phrase"> d’High-Tech. Veuillez consulter notre </span>
+                                <a class="link-red" href="#">Notice Protection de vos Informations Personnelles</a>
+                                <span class="filer-phrase">, notre </span>
+                                <a class="link-red" href="#">Notice Cookies</a>
+                                <span class="filer-phrase"> et notre </span>
+                                <a class="link-red" href="#">Notice Annonces publicitaires basées sur vos centres d’intérêt</a>.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-lg-12 already-reg">
+                <div class="new">
+                    <span class="new-catch">— Vous possédez déjà un compte ? —</span>
+                </div>
+
+                <div class="question col-lg-12">
+                    <a class="btn btn-primary" href="{{ path('fos_user_security_login') }}">Connectez-vous</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

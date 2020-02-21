@@ -1,0 +1,33 @@
+AppBundle\Entity\PurchaseProduct:
+    type:  entity
+    table: product
+    id:
+        id:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            id:       true
+            column:   id
+            generator:
+                strategy: IDENTITY
+    fields:
+        product:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            column:   product_id
+        productsNumber:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            column:   products_number
+        totalPrice:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            column:   total_price
+    lifecycleCallbacks: {  }

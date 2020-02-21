@@ -1,0 +1,192 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ asset('assets/css/layout.css') }}" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
+{% endblock %}
+
+{% block header %}
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="perso-container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse row" id="navbarSupportedContent" style="flex-direction: row; justify-content: start; align-items: center;">
+                <a href="{{ path('catalog') }}">
+                    <img class="logo" src="{{ asset('assets/img/logo.png') }}" />
+                </a>
+
+                {{ render(controller('AppBundle:Catalog:search')) }}
+
+                <a class="advanced-search" href="#">Recherche avancée</a>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="perso-container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse row" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Adresse
+                            <span class="sr-only"></span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catégorie</a>
+
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            {% if listCategories is defined %}
+                                {% for category in listCategories %}
+                                    <a class="dropdown-item" href="{{ path('category', {'id': category.id}) }}">{{ category.name }}</a>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-dollar-sign"></i>
+                            Soldes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-coins"></i>
+                            HT Market
+                        </a>
+                    </li>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0" style="margin-top: 27px;">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            {% if is_granted("ROLE_ADMIN") %}
+                                <a class="nav-link text-primary" href="{{ path('admin', {'action': 'list', 'entity': 'Category'})}}">
+                                    <i class="fas fa-user-secret"></i>
+                                    Admin
+                                </a>
+                            {% endif %}
+                        </li>
+
+                        <li class="nav-item">
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                {{ ''|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+
+                                <a class="nav-link" href="{{ path('user') }}">
+                                    <i class="fas fa-user"></i>
+                                    Profil
+                                </a>
+                            {% endif %}
+                        </li>
+
+                        <li class="nav-item">
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                {{ ''|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+
+                                <a class="nav-link" href="{{ path('fos_user_security_logout') }}">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                </a>
+                            {% else %}
+                                <a class="nav-link" href="{{ path('fos_user_security_login') }}">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    {{ 'layout.login'|trans({}, 'FOSUserBundle') }}
+                                </a>
+                            {% endif %}
+                        </li>
+
+                        <li class="nav-item">
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            {% else %}
+                                <a class="nav-link" href="{{ path('fos_user_registration_register') }}">
+                                    <i class="fas fa-user-plus"></i>
+                                    S'inscrire
+                                </a>
+                            {% endif %}
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-star"></i>
+                                Souhaits
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('cart') }}">
+                                <i class="fas fa-shopping-cart"></i>
+                                Panier
+                            </a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block body %}{% endblock %}
+
+{% block footer %}
+    <div class="text-bar">
+        <a class="return-top" href="#">Retour en haut</a>
+    </div>
+
+    <div class="container footer-container">
+        <div class="row">
+            <div class="about-us col-lg-3 col-md-6 col-sm-12">
+                <h5>Mieux nous connaître</h5>
+
+                <a class="" href="#">À propos de High-Tech</a>
+                <a class="" href="#">Carrières</a>
+                <a class="" href="{{ path('rgpd', {'_fragment' : 'cookies'}) }}">Utilisation des cookies</a>
+                <a class="" href="{{ path('rgpd') }}">Mentions légales</a>
+            </div>
+
+          <div class="sell-out col-lg-3 col-md-6 col-sm-12">
+              <h5>Gagnez de l'argent</h5>
+
+              <a class="" href="#">Vendez sur High-Tech</a>
+              <a class="" href="#">Devenez Partenaire</a>
+              <a class="" href="#">Vendez vos produits</a>
+          </div>
+
+          <div class="payment-means col-lg-3 col-md-6 col-sm-12">
+              <h5>Moyens de paiement</h5>
+
+              <a class="" href="#">Cartes de paiment</a>
+              <a class="" href="#">Paiement en 4 fois</a>
+              <a class="" href="#">Chèques-cadeaux</a>
+              <a class="" href="#">Paypal</a>
+          </div>
+
+          <div class="help col-lg-3 col-md-6 col-sm-12">
+              <h5>Besoin d'aide ?</h5>
+
+              <a class="" href="#">Suivre vos commandes</a>
+              <a class="" href="#">Options de livraison</a>
+              <a class="" href="#">Retours ou remplacements</a>
+              <a class="" href="#">Informations Marketplace</a>
+              <a class="" href="#">Aide</a>
+          </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+{% endblock %}

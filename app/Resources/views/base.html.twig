@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}High Tech{% endblock %}</title>
+
+    {% block stylesheets %}
+    {% endblock %}
+</head>
+
+<body>
+<header>
+    {% block header %}
+    {% endblock %}
+</header>
+
+{% block body %}
+{% endblock %}
+
+<footer class="footer navbar-dark">
+    {% block footer %}
+    {% endblock %}
+</footer>
+
+{% block javascripts %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,32 @@
+AppBundle\Entity\Image:
+    type:  entity
+    table: image
+    id:
+        id:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            id:       true
+            generator:
+                strategy: IDENTITY
+    fields:
+        product:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            column:   product_id
+        source:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+        alt:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

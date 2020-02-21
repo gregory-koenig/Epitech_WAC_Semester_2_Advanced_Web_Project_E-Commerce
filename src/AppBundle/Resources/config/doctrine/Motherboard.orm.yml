@@ -1,0 +1,50 @@
+AppBundle\Entity\Motherboard:
+    type:  entity
+    table: motherboard
+    id:
+        id:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            id:       true
+            column:   id
+            generator:
+                strategy: IDENTITY
+    fields:
+        socket:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   socket
+        chipset:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   chipset
+        ports:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   ports
+        maxFrequency:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   max_frequency
+        sataController:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   sata_controller
+    lifecycleCallbacks: {  }

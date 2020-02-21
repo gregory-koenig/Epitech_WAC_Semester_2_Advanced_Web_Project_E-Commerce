@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+	<link rel="stylesheet" href="{{ asset('assets/css/categories.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <a href="#">
+                    <img class="d-block w-100" src="{{ asset('assets/img/soldes.png') }}" alt="First slide" />
+                </a>
+            </div>
+
+            <div class="carousel-item">
+                <a href="#">
+                    <img class="d-block w-100" src="{{ asset('assets/img/flash.png') }}" alt="Second slide" />
+                </a>
+            </div>
+
+            <div class="carousel-item">
+                <a href="#">
+                    <img class="d-block w-100" src="{{ asset('assets/img/echo.png') }}" alt="Third slide" />
+                </a>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div id="quizbox">
+        {% for category in listCategories %}
+            {% if category.background == 0 %}
+                <a class="cat-link" style="text-decoration: none;" href="{{ path('category', {'id': category.id}) }}">
+                    <div class="categories">
+                        <div class="product-box dark-product-box">
+                            {{ category.name }}
+                        </div>
+                    </div>
+                </a>
+            {% else %}
+                <a class="cat-link" style="text-decoration: none;" href="{{ path('category', {'id': category.id}) }}">
+                    <div class="categories">
+                        <div class="product-box light-product-box">
+                            {{ category.name }}
+                        </div>
+                    </div>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

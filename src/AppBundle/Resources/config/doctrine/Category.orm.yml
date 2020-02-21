@@ -1,0 +1,26 @@
+AppBundle\Entity\Category:
+    type:  entity
+    table: category
+    id:
+        id:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            id:       true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type:     string
+            nullable: false
+            length:   100
+            options:
+                fixed: false
+        background:
+            type:     boolean
+            nullable: false
+            length:   
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,31 @@
+.container {
+  display: flex; }
+
+#name {
+  width: 500px; }
+
+#cc-number {
+  width: 350px; }
+
+#ccv {
+  width: 130px;
+  margin-left: 16px; }
+
+.text-ccv {
+  padding-left: 227px; }
+
+.text-name, .text-cc, .text-expiration {
+  padding-top: 20px;
+  margin-bottom: -12px; }
+
+.sub-btn {
+  padding-top: 35px;
+  padding-bottom: 50px; }
+
+.test {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+/*# sourceMappingURL=payment.css.map */

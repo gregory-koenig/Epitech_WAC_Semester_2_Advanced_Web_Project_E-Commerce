@@ -1,0 +1,74 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('assets/css/items.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="perso">
+        <div id="mySidenav" class="side-nav">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+            
+            <div class="dropdown-divider"></div>
+        </div>
+
+        <div class="container">
+            <span>{{ nbResults }} résultat(s) trouvé(s) pour "{{ search }}".</span>
+
+            {% for product in results %}
+                <div class="row">
+                    <div class="product-box">
+                        <div class="img-product col-lg-2">
+                            <img class="img-product" src="{{asset('assets/img/'~product.getBrand)}}"/>
+                        </div>
+
+                        <div class="product-name col-lg-10">
+                            <div class="name">
+                                <a href="#">
+                                    <a href="{{ path('product', {'id': product.id}) }}">{{ product.name }}</a>
+                                </a>
+
+                                <div>
+                                    <i class="fas fa-star full-star"></i>
+                                    <i class="fas fa-star full-star"></i>
+                                    <i class="fas fa-star full-star"></i>
+                                    <i class="fas fa-star full-star"></i>
+                                    <i class="far fa-star empty-star"></i>
+                                </div>
+
+                                <span>4/5 (1 avis)</span>
+
+                                <br /><br />
+
+                                {% for category in listCategories if product.category == category.id %}
+                                    <span>Catégorie : {{ category.name }}</span>
+                                {% endfor %}
+                            </div>
+
+                            <div class="product-price">
+                                <span class="discount">Prix réduit </span>
+                                <span class="full-price">{{ product.price }} EUR</span>
+
+                                <br />
+
+                                <div class="infos">
+                                    <span class="delivery">Livraison gratuite possible (voir fiche produit).</span>
+                                    <span class="stock">Stock : {{ product.stock }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="spacer"></div>
+                
+                <div class="spacer"></div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    
+    <link rel="stylesheet" href="{{ asset('assets/css/payment.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <form action="{{ path('cart_confirmation')}}" method="POST">
+            <img src="" alt="" height="" width="" />
+
+            <div class="text-name container">
+                <p>Nom du titulaire de la carte :</p>
+            </div>
+
+            <div class="container">
+                <input type="text" name="name" placeholder="John Doe" id="name" class="form-control" />
+            </div>
+
+            <div class="text-cc container">
+                <p>Numéro de la carte :</p>
+            </div>
+
+            <div class="container">
+                <input type="text" name="cc-number" placeholder="4854 5178 9101 4128" id="cc-number" class="form-control" />
+            </div>
+
+            <div class="text-cc container">
+                <p>Code de sécurité :</p>
+            </div>
+
+            <div class="container">
+                <input type="text" name="ccv" placeholder="492" id="ccv" class="form-control" />
+            </div>
+
+            <div class="text-expiration container">
+                <p>Date d'expiration :</p>
+            </div>
+
+            <div class=" col-lg-4" id="expiration-date">
+                <div class="test">
+                    <select class="form-control">
+                        <option value="jan">Janvier</option>
+                        <option value="feb">Février</option>
+                        <option value="mar">Mars</option>
+                        <option value="apr">Avril</option>
+                        <option value="may">Mai</option>
+                        <option value="jun">Juin</option>
+                        <option value="jul">Juillet</option>
+                        <option value="aug">Août</option>
+                        <option value="sept">Septembre</option>
+                        <option value="oct">Octobre</option>
+                        <option value="nov">Novembre</option>
+                        <option value="dec">Décembre</option>
+                    </select>
+
+                    <select class="form-control" id="expiration-date">
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="hidden" name="input_token" value="{{ token }}">
+
+            <div class="sub-btn container">
+                <button type="submit" class="btn btn-outline-primary">Valider</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,255 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #E2E2E2; }
+
+.row {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.infos-users {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 20px;
+  border: 2px solid transparent;
+  margin-right: 2px;
+  margin-bottom: 2px; }
+  .infos-users:hover {
+    border: 2px solid #CE0234; }
+  .infos-users .flex-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .infos-users .title-box {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: #0084b4;
+    position: absolute;
+    top: 0; }
+  .infos-users .flex-span .title-label {
+    font-weight: 600;
+    color: #0084b4; }
+  .infos-users .flex-span .info {
+    color: #555; }
+  .infos-users .btn-edit {
+    margin-top: 40px; }
+    .infos-users .btn-edit .btn-text {
+      font-size: 14px; }
+
+.infos-delivery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin-top: 20px;
+  border: 2px solid transparent;
+  margin-left: 2px;
+  margin-bottom: 2px; }
+  .infos-delivery:hover {
+    border: 2px solid #CE0234; }
+  .infos-delivery .flex-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .infos-delivery .title-box {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: #0084b4; }
+  .infos-delivery .flex-span .title-label {
+    font-weight: 600;
+    color: #0084b4; }
+  .infos-delivery .flex-span .info {
+    color: #555; }
+  .infos-delivery .btn-edit {
+    margin-top: 40px;
+    margin-bottom: 40px; }
+    .infos-delivery .btn-edit .btn-text {
+      font-size: 14px; }
+  .infos-delivery .btn-new {
+    margin-top: -40px; }
+    .infos-delivery .btn-new .btn-text {
+      font-size: 14px; }
+
+.infos-bill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  margin-right: 2px;
+  margin-top: 2px; }
+  .infos-bill:hover {
+    border: 2px solid #CE0234; }
+  .infos-bill .flex-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .infos-bill .title-box {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: #0084b4; }
+  .infos-bill .flex-span .title-label {
+    font-weight: 600;
+    color: #0084b4; }
+  .infos-bill .flex-span .info {
+    color: #555; }
+  .infos-bill .btn-edit {
+    margin-top: 40px;
+    margin-bottom: 40px; }
+    .infos-bill .btn-edit .btn-text {
+      font-size: 14px; }
+  .infos-bill .btn-new {
+    margin-top: -40px; }
+    .infos-bill .btn-new .btn-text {
+      font-size: 14px; }
+
+.infos-rgpd {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  margin-left: 2px;
+  margin-top: 2px; }
+  .infos-rgpd:hover {
+    border: 2px solid #CE0234; }
+  .infos-rgpd .info-link {
+    color: #0084b4; }
+  .infos-rgpd .flex-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .infos-rgpd .title-box {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    color: #0084b4;
+    position: absolute;
+    top: 0; }
+  .infos-rgpd .flex-span .title-label {
+    font-weight: 600;
+    color: #0084b4;
+    text-transform: uppercase; }
+  .infos-rgpd .flex-span .info {
+    color: #555; }
+  .infos-rgpd .btn-edit {
+    margin-top: 40px; }
+    .infos-rgpd .btn-edit .btn-text {
+      font-size: 14px; }
+
+.btn-primary {
+  background-color: #0084b4;
+  border-color: #0084b4; }
+
+.btn-primary:hover {
+  background-color: #00658B;
+  border-color: #00658B; }
+
+.btn-primary:active {
+  background-color: #00658B;
+  border-color: #00658B;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25); }
+
+.btn-primary:focus {
+  background-color: #00658B;
+  border-color: #00658B; }
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #0084b4;
+  border-color: #0084b4;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25); }
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25); }
+
+.btn-primary.focus, .btn-primary:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25); }
+
+.form-control:focus {
+  border-color: #0084b4;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(0, 130, 180, 0.25); }

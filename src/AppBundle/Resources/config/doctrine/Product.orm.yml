@@ -1,0 +1,75 @@
+AppBundle\Entity\Product:
+    type:  entity
+    table: product
+    id:
+        id:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            id:       true
+            generator:
+                strategy: IDENTITY
+    fields:
+        category:
+            type:     integer
+            nullable: true
+            options:
+                unsigned: false
+            column:   category_id
+        name:
+            type:     string
+            nullable: true
+            length:   255
+            options:
+                fixed: false
+        description:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   description
+        brand:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   brand
+        price:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   price
+        stock:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   stock
+        weight:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   weight
+        dimensions:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   dimensions
+        discount:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   discount
+    lifecycleCallbacks: {  }

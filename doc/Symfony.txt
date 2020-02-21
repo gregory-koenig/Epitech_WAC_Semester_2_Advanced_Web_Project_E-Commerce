@@ -1,0 +1,31 @@
+- Créer un bundle
+php bin/console generate:bundle
+
+- Créer la base de données :
+php bin/console doctrine:database:create
+
+- Créer une entité :
+php bin/console doctrine:generate:entity
+
+- Vérifier les requêtes SQL créant la table :
+php bin/console doctrine:schema:update --dump-sql
+
+- Créer la table :
+php bin/console doctrine:schema:update --force
+
+- Génère une entity en fonction du mapping (c-a-d ce qui manque) :
+php bin/console doctrine:generate:entities nameBundle:nameEntity
+
+Si tout est ok, supprimer le fichier de sauvegarde nameEntity.php~
+
+- Si DoctrineFixtures installé, charger données dans la base de données
+php bin/console doctrine:fixtures:load
+
+- Tester des requêtes DQL
+php bin/console doctrine:query:dql "SELECT [alias] FROM nameBundle:nameEntity [alias]"
+
+- Générer un constructeur de formulaire
+php bin/console doctrine:generate:form nameBundle:nameType
+
+- Lister toutes les routes
+php bin/console debug:router

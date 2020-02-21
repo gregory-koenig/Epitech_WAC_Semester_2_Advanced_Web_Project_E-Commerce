@@ -1,0 +1,64 @@
+// Variables fonts, colors and sizing
+
+//Colors
+$black: #555;
+$red: #CE0234;
+$blue: #0084b4;
+$rgbaBlue: rgba(0, 132, 180, 1);
+$midblue: #38475A;
+$darkblue: #232F3E;
+$lightBlue: #c0deed;
+$rgbaLightBlue: rgba(192, 222, 237, 1);
+$grey: #9B9B9B;
+$rgbaGrey: rgba(155, 155, 155, 1);
+$lightGrey: #efefef;
+$rgbaLightGrey: rgba(219, 219, 219, 1);
+$white: #ffffff;
+$rgbaWhite: rgba(255, 255, 255, 1);
+
+//Fonts
+$titleFont: 'Raleway', sans-serif;
+$textFont: 'Roboto', sans-serif;
+// $titleThin
+// $titleFat
+// $textThin
+// $textFat
+
+body {
+    background-color: $white;
+}
+
+.categories .product-box {
+    transition: ease 0.2s;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 20vh;
+
+    &:hover {
+        background-color: $darkblue;
+        transition: ease 0.2s;
+        color: $white;
+    }
+}
+
+.product-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $red;
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    &:hover {
+        color: $white;
+    }
+}
+
+.light-product-box {
+    background-color: $white;
+}
+
+.dark-product-box {
+    background-color: $white;
+}

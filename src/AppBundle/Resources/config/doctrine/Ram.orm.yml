@@ -1,0 +1,50 @@
+AppBundle\Entity\Ram:
+    type:  entity
+    table: ram
+    id:
+        id:
+            type:     integer
+            nullable: false
+            options:
+                unsigned: false
+            id:       true
+            column:   id
+            generator:
+                strategy: IDENTITY
+    fields:
+        type:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   type
+        capacity:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   capacity
+        frequency:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   frequency
+        timings:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   timings
+        tension:
+            type:     string
+            nullable: false
+            length:   255
+            options:
+                fixed: false
+            column:   tension
+    lifecycleCallbacks: {  }
